@@ -7,7 +7,7 @@ Generating tpl_config files
 const TplConfigPlugin = require("webpack-tplconfig-plugin")
 ```
 
-```json
+```
     plugins: [
         ...
         new TplConfigPlugin({
