@@ -1,6 +1,6 @@
 {
   "name": "webpack-tplconfig-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generating tpl_config files",
   "main": "index.js",
   "scripts": {
