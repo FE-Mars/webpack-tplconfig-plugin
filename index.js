@@ -20,11 +20,15 @@ class TplConfigPlugin{
       }
     });
 
-    compiler.hooks.afterEmit.tap(pluginName, () => {
-      let outputFile = path.resolve(output.path, 'tpl_config');
-      fs.writeFile(outputFile, content, function(err) {
-        if(err) console.error(err);
-      });
+    compiler.hooks.emit.tap(pluginName, (compilation) => {
+      compilation.assets['tpl_config'] = {
+        source: () => {
+          return content;
+        },
+        size: () => {
+          return content.length;
+        }
+      }
     })
   }
 }
