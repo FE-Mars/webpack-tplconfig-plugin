@@ -20,7 +20,7 @@ class TplConfigPlugin{
       }
     });
 
-    compiler.hooks.done.tap(pluginName, () => {
+    compiler.hooks.afterEmit.tap(pluginName, () => {
       let outputFile = path.resolve(output.path, 'tpl_config');
       fs.writeFile(outputFile, content, function(err) {
         if(err) console.error(err);
